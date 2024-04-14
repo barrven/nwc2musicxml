@@ -37,7 +37,7 @@
 
 	<target depends="init" name="build.java.src">
 		<echo message="${ant.project.name}: ${ant.file}" />
-		<javac debug="true" debuglevel="${debuglevel}" destdir="${java.src.build.path}" source="${source}" target="${target}">
+		<javac includeantruntime="false" debug="true" debuglevel="${debuglevel}" destdir="${java.src.build.path}" source="${source}" target="${target}">
 			<src path="src" />
 			<classpath refid="NwcTxt2MusicXML.classpath" />
 		</javac>
@@ -58,6 +58,9 @@
 
 	<target depends="build.java.src" name="package">
 		<jar destfile="${outdir}/${ant.project.name}.jar" basedir="bin">
+			<manifest>
+				<attribute name="Main-Class" value="fr.lasconic.nwc2musicxml.convert.Nwc2MusicXML" />
+			</manifest>
 		</jar>
 	</target>
 
