@@ -35,10 +35,14 @@ How to Run
 * Download this repo to your machine. You can use git clone if you have git installed, otherwise download the zip file and unzip it.
 * Install a current JDK and Apache Ant build tool, and make sure both the JDK and Ant is configured in your path environment variable.
 * Open a terminal, then cd to the project folder.
-* run the following commands: 
+* run the following commands:
+
     ```ant clean``` (optional)
+
     ```ant build```
+
     ```ant test``` (optional)
+    
     ```ant package```
 
 The package command will create a .jar file in the /build folder called ***NwcTxt2MusicXML.jar***. This file should be portable to any device with Java installed.
